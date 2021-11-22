@@ -1,0 +1,283 @@
+help:
+  menu:
+    moderation:
+      announcement:
+        commandTitle: ":mega: Announce"
+        commandUsage: "announce <announcement>"
+        commandDescription: "This will announce what you want in the announcements channel"
+      ban:
+        commandTitle: ":no_entry_sign: Ban"
+        commandUsage: "ban <member> <reason>"
+        commandDescription: "This will ban the person from the Discord"
+      unBan:
+        commandTitle: ":grinning: UnBan"
+        commandUsage: "unban <member> <reason>"
+        commandDescription: "This will unban the person from the Discord!"
+      blacklist:
+        commandTitle: ":x: Blacklist"
+        commandUsage: "blacklist <member> <reason>"
+        commandDescription: "Restricts user access to only two channels, The blacklist channel and the ticket"
+      unBlacklist:
+        commandTitle: ":yum: Unblacklist"
+        commandUsage: "unblacklist <member>"
+        commandDescription: "Gives back user full access to the default channels"
+      lockChannel:
+        commandTitle: ":envelope: LockChannel"
+        commandUsage: "lock"
+        commandDescription: "Locks the current channel so only staff can speak"
+      unlockChannel:
+        commandTitle: ":incoming_envelope: Unlock Channel"
+        commandUsage: "unlock"
+        commandDescription: "Gives the members access to speak in the channel again"
+      poll:
+        commandTitle: ":family_mmgg: Poll"
+        commandUsage: "poll <poll>"
+        commandDescription: "Sends a poll in the polls channel for people to vote"
+      say:
+        commandTitle: ":loudspeaker: Say"
+        commandUsage: "say <message>"
+        commandDescription: "Turns your message into an embed! and sends it to the current channel"
+      purge:
+        commandTitle: ":red_circle: Purge"
+        commandUsage: "purge <amount>"
+        commandDescription: "Removes x amount of messages"
+      createRole:
+        commandTitle: ":passport_control: Create Role"
+        commandUsage: "createrole <rolename> <role color>"
+        commandDescription: "Creates a role"
+      deleteRole:
+        commandTitle: ":space_invader: Delete Role"
+        commandUsage: "deleterole <rolename>"
+        commandDescription: "Deletes the role"
+      createChannel:
+        commandTitle: "🙌🏻 Create Channel"
+        commandUsage: "createchannel <type> <name>"
+        commandDescription: "Creates a channel"
+      deleteChannel:
+        commandTitle: "✏️ Delete Channel"
+        commandUsage: "deletechannel"
+        commandDescription: "Deletes the current channel you are in"
+      transcripts:
+        commandTitle: ":love_letter: Transcripts"
+        commandUsage: "script"
+        commandDescription: "Gets the messages in a current channel and logs them"
+      giveaway:
+        commandTitle: "📣 Giveaway"
+        commandUsage: "giveaway"
+        commandDescription: "Starts the setup process for creating a giveaway"
+      warn:
+        commandTitle: "Warning"
+        commandUsage: "warn <option> <user> <reason>"
+        commandDescription: "Gives you multiple ways of warning users"
+      warnHelp:
+        commandTitle: "Warn Help"
+        commandUsage: "warn help"
+        commandDescription: "Gives you the help menu to the warning system"
+      unwarn:
+        commandTitle: "UnWarn"
+        commandUsage: "unwarn <user>"
+        commandDescription: "Removes the latest warning from a user"
+
+    games:
+      headsOrTails:
+        commandTitle: ":moneybag: Heads or Tails"
+        commandUsage: "coinflip <heads or tails> <steak>"
+        commandDescription: "Gamble x amount of coins on heads or tails and possibly double your steak!"
+      wouldYouRather:
+        commandTitle: ":shark: Would You Rather"
+        commandUsage: "rather"
+        commandDescription: "Gives you a question relating to the game would you rather!"
+      slots:
+        commandTitle: ":slot_machine: Slots"
+        commandUsage: "slot <amount>"
+        commandDescription: "Take a hit at the slot machine"
+
+
+    fun:
+      eightBall:
+        commandTitle: ":8ball: Magic 8 ball"
+        commandUsage: "8ball <question>"
+        commandDescription: "The magic 8ball will decide your fate from your question"
+      fidgetSpinner:
+        commandTitle: "߷ Fidget Spinner"
+        commandUsage: "fidgetspinner"
+        commandDescription: "Spins your fidget spinner"
+      leet:
+        commandTitle: "(╯◕_◕)╯ Leet"
+        commandUsage: "leet <message>"
+        commandDescription: "Turns your message in leet"
+      trumpQuote:
+        commandTitle: ":rofl: Trump Quote"
+        commandUsage: "trump"
+        commandDescription: "Gets a quote from Donald J Trump"
+      vodka:
+        commandTitle: ":champagne: Vodka"
+        commandUsage: "vodka"
+        commandDescription: "Gives you a nice gif of you drinking vodka!"
+      slav:
+        commandTitle: ":man_dancing: Slav Dance"
+        commandUsage: "slav"
+        commandDescription: "Gives you a brilliant gif of an amazing dancer"
+      comics:
+        commandTitle: "Comics"
+        commandUsage: "comics"
+        commandDescription: "Gets you a random post from r/comic"
+      dankMeme:
+        commandTitle: "Dank Meme"
+        commandUsage: "dankmeme"
+        commandDescription: "Gets you a random post from r/dankmemes"
+      meme:
+        commandTitle: "Meme"
+        commandUsage: "meme"
+        commandDescription: "Gets you a random post from r/memes"
+      showerThought:
+        commandTitle: "ShowerThought"
+        commandUsage: "showerthought"
+        commandDescription: "Gets you a random post from r/showerthoughts"
+      tinder:
+        commandTitle: "Tinder"
+        commandUsage: "tinder"
+        commandDescription: "Gets you a random post from r/tinder"
+      wellThatSucks:
+        commandTitle: "Well That Sucks"
+        commandUsage: "wellthatsucks"
+        commandDescription: "Gets you a random post from r/wellthatsucks"
+      wholesomeMeme:
+        commandTitle: "Wholesome Meme"
+        commandUsage: "wholesome"
+        commandDescription: "Gets you a random post from r/wholesomememes"
+
+    economy:
+      coinsLeaderboard:
+        commandTitle: ":first_place: Coins Leaderboard"
+        commandUsage: "coinsleaderboard"
+        commandDescription: "Gets the top 15 people with the most coins on the server"
+      xpLeaderboard:
+        commandTitle: ":second_place: XP leaderboard"
+        commandUsage: "xpleaderboard"
+        commandDescription: "Gets you the top 15 people with the most levels!"
+      level:
+        commandTitle: ":rocket: Level"
+        commandUsage: "level"
+        commandDescription: "Shows you your current level and how much xp you need to level up"
+      coins:
+        commandTitle: ":money_with_wings: Coins"
+        commandUsage: "coins"
+        commandDescription: "Shows you your balance"
+      setCoins:
+        commandTitle: ":confused: Set Coins"
+        commandUsage: "setcoins <member> <amount>"
+        commandDescription: "Sets the members coins to x amount"
+      pay:
+        commandTitle: ":writing_hand: Pay"
+        commandUsage: "pay <user> <amount>"
+        commandDescription: "Pay someone a bit of your wealth"
+      giveCoins:
+        commandTitle: ":moneybag: Give Coins"
+        commandUsage: "givecoins <user> <amount>"
+        commandDescription: "Sets someones balance to x and adds their balance on top"
+      rob:
+        commandTitle: "Rob Coins"
+        commandUsage: "rob <user>"
+        commandDescription: "Rob someones wallet."
+      daily:
+        commandTitle: "Daily"
+        commandUsage: "daily"
+        commandDescription: "collect a daily amount of coins"
+
+    misc:
+      avatar:
+        commandTitle: ":frame_photo: Avatar"
+        commandUsage: "avatar <tag user>"
+        commandDescription: "Gets you the pfp of the mentioned user"
+      define:
+        commandTitle: ":books: Define"
+        commandUsage: "define <word>"
+        commandDescription: "Allows you to look up the meaning of a word"
+      memberCount:
+        commandTitle: ":family_wwgg: Member Count"
+        commandUsage: "membercount"
+        commandDescription: "Gives you the total members in the discord"
+      screenshare:
+        commandTitle: ":desktop: Screenshare"
+        commandUsage: "screenshare"
+        commandDescription: "Allows you to screenshare right from the voice channel you are in!"
+      serverID:
+        commandTitle: ":key2: Server ID"
+        commandUsage: "serverid"
+        commandDescription: "Gets you the ID of the entire guild"
+      userID:
+        commandTitle: ":busts_in_silhouette: User ID"
+        commandUsage: "userid <tag user>"
+        commandDescription: "Gets you the ID of the desired user"
+      userInformation:
+        commandTitle: ":dark_sunglasses: User Information"
+        commandUsage: "info <tag user>"
+        commandDescription: "Gives you the stats of the desired user"
+      channelID:
+        commandTitle: "🆔 Channel ID"
+        commandUsage: "channelid <channel>"
+        commandDescription: "Gets the ID of a desired channel"
+      ping:
+        commandTitle: ":ping_pong: Ping"
+        commandUsage: "ping"
+        commandDescription: "Pong! Good for testing the latency of the bot"
+      roleID:
+        commandTitle: "🇮🇩 Role ID"
+        commandUsage: "roleid <role>"
+        commandDescription: "Gets the ID of a role"
+      randomNumberGen:
+        commandTitle: "Random Number Generator"
+        commandUsage: "randomnumber <maxnumber>"
+        commandDescription: "Gets a random number between 1 and maxNumber"
+      uptime:
+        commandTitle: "Uptime"
+        commandUsage: "uptime"
+        commandDescription: "Tells you how long the bot has been running for"
+
+
+    general:
+      warnings:
+        commandTitle: "Warnings"
+        commandUsage: "warnings <user>"
+        commandDescription: "Gets the warnings on a user"
+      report:
+        commandTitle: ":clipboard: Report"
+        commandUsage: "report <type> <reason>"
+        commandDescription: "Report something"
+      IP:
+        commandTitle: ":bowling: IP"
+        commandUsage: "ip"
+        commandDescription: "Gives you the IP to the server"
+      links:
+        commandTitle: ":page_with_curl: Links"
+        commandUsage: "links"
+        commandDescription: "Shows you the links of the server"
+      suggest:
+        commandTitle: ":mega: Suggest"
+        commandUsage: "suggest <suggestion>"
+        commandDescription: "Give in your suggestion and make your voice heard!"
+      website:
+        commandTitle: ":link: Website"
+        commandUsage: "website"
+        commandDescription: "Gives you the link to the website"
+      store:
+        commandTitle: ":shopping_cart: Store"
+        commandUsage: "store"
+        commandDescription: "Gives you the link to the webstore"
+      newTicket:
+        commandTitle: ":card_index: New Ticket"
+        commandUsage: "new"
+        commandDescription: "Opens a support ticket"
+      addUserToTicket:
+        commandTitle: "🤝 Add"
+        commandUsage: "add <user> <ticket>"
+        commandDescription: "Adds another user to a ticket"
+      removeUserFromTicket:
+        commandTitle: ":wave: Remove"
+        commandUsage: "remove <user> <ticket>"
+        commandDescription: "Removes a user from a ticket"
+      closeTicket:
+        commandTitle: ":x: Close Ticket"
+        commandUsage: "close"
+        commandDescription: "Closes your support ticket"
