@@ -1177,14 +1177,6 @@ ticket:
     enabled: true
     aliases: []
 
-##########################
-#       EXTENTIONS       #
-#                        #
-# Feature which you may  #
-# Want. But are disabled #
-# by default             #
-##########################
-
 commandAnalysis:
   ignoreSpecials: true # This stops the bot saying a command isn't found
   # when a user does -.- etc.. This doesn't include letters.
@@ -1200,4 +1192,4 @@ VoiceChannels:
 
 messageLogger:
   enabled: true # Logs every message sent to any channel.
-  channelID: "655421752838717460"
+  channelID: "2138842819487832"
