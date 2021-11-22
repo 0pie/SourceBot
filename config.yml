@@ -1,0 +1,1203 @@
+bot:
+  token: "your token here"
+  prefix: "-"
+  bot_activity: "Playing Half Life 3"
+  version: "3" # DO NOT CHANGE
+
+roles:
+  owner: "Owner"
+  staff: "Staff"
+  blacklisted: "Blacklisted"
+  muted: "muted"
+  supportTeam: "Support Team" # This role will give people access to look in tickets
+  member: "NONE" # If you do not want a member role please set to NONE
+
+channel:
+  logs: "logs"
+  reports: "reports"
+  joinLeave: "welcome-goodbye"
+  announcements: "announcements"
+  polls: "polls"
+  suggestions:
+    accepted: "accepted-suggestions" # accepted suggestions will go here
+    denied: "denied-suggestions" # denied suggestions will go here
+    normal: "suggestions" # Suggestions that haven't been denied/accepted yet will go here
+  commands:
+    blockedChannels: ["general"] # This will block commands being ran in any channel defined in the array.
+
+messages:
+  embed:
+    override: true # This will override every embed footer. So you don't need to change everyone
+    footer: "SourceBot by 0pie"
+
+  noPermission:
+    message: "You do not have permission to run this command!"
+    embed:
+      title: "Hold up cheif!"
+      color: "RANDOM" # If you want a static colour, do #<HEX CODE>
+      footer: "SourceBot by 0pie"
+
+  noReason:
+    message: "You did not provide a reason"
+    embed:
+      title: "No reason"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  channelNotFound:
+    message: "I am unable to find the channel **{channel}** Please create it! {command}"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  personNotFound:
+    message: "You tagged an invalid member of the Discord!"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noUserTagged:
+    message: "You didn't tag a member!"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  invalidOption:
+    message: "You provided an invalid option"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noColor:
+    message: "You did not provide a color! \n\n**Hint:** You must use a HEX Value! (Example: #AA0000)"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noName:
+    message: "You did not provide a name"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  commandNotFound:
+    message: "Unknown Command **{command}**"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noWordProvided:
+    message: "You did not specify a word"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noCoinsAmountProvided:
+    message: "You did not specify the amount of coins"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  cooldown:
+    message: "You have a cooldown for another ${cooldown} seconds"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+  noMessage:
+    message: "You did not provide a message to send"
+    embed:
+      title: "Error"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+core:
+  embeds: true # If you want all messages to be sent in embeds. Leave this as true
+  resetCoinsAndLevelsOnLeave: true
+  announceCommandNotFound: true
+  debug: false # Leave disabled unless stated otherwise
+  discordName: "SourceBot Discord"
+
+join:
+  enabled: true
+  addRoleOnJoin:
+    enabled: false
+    role: "NONE" # Input role here. This will be added on user join if enabled.
+    # ^ If you want to use the member role defined above. Just input MEMBER
+  message:
+    sendInEmbed: true
+    message: "RANDOM"
+    embed:
+      title: "{newmember} has joined!"
+      color: "RANDOM"
+      footer: ""
+
+leave:
+  enabled: true
+  message:
+    sendInEmbed: true
+    message: "RANDOM"
+    embed:
+      title: "{newmember} has left!"
+      color: "RANDOM"
+      footer: "SourceBot by 0pie"
+
+# Coin & XP
+
+coinSystem:
+  enabled: true
+  cooldown:
+    timer: "15" # seconds
+  blockChannels:
+    enabled: false
+    channels: ["polls", "announcements"] # The channels of which you do not want users to be able to gain coins in
+
+xpSystem:
+  enabled: true
+  cooldown:
+    timer: "15" # seconds
+  messages:
+    levelUp:
+      embed:
+        title: "Level up!"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+  blockChannels:
+    enabled: false
+    channels: ["polls", "announcements"] # The channels of which you do not want users to be able to gain coins in
+
+filterSystem:
+  enabled: false
+  bypassRole: "Staff"
+  log: true
+  messages:
+    sendInEmbed: true
+    wordIsBlacklisted:
+      message: "{tagauthor} You said a naughty naughty word. I've deleted your message to keep this PG <3"
+      embed:
+        title: "Filter System"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+warningSystem:
+  enabled: true
+  sendWarnInDM: true
+  sendUnWarnInDM: true
+  messages:
+    userHasNoWarnings:
+      message: "No records found"
+      embed:
+        title: "Warnings"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    warningRemoved:
+      message: "This warning has been removed"
+      embed:
+        title: "Warnings"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    rollback:
+      message: "Rollback complete for staff member {staff}"
+      embed:
+        title: "Warnings"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    warningAdded:
+      message: "User {user} has been warned. Reason: {reason} by {staff}"
+      embed:
+        title: "Warnings"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    warnings:
+      embed:
+        title: "Warnings"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    warnDM:
+      message: "You have been warned! \nReason: {reason}\nBy: {staffmember}"
+      embed:
+        title: "Warning Added"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    unWarnDM:
+      message: "A warning has been removed by {staffmember}"
+      embed:
+        title: "Warning Removed"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+###################
+# GIVEAWAY SYSTEM #
+###################
+giveawaySystem:
+  enabled: true
+  permissionRole: "Staff"
+  aliases: ["gs"]
+  emoji: "🎉"
+  messages:
+    inputChannel:
+      message: "🎉 Giveaway Setup!\nSo you want to start a giveaway?\nPlease type the name of the channel you wish the giveaway to take place in."
+    invalidChannel:
+      message: "You said an invalid channel.\nAborting Giveaway Setup."
+    inputSeconds:
+      message: "🎉 Nice, so the giveaway is going to take place in {giveawayChannel}!\nNext, please input the amount of time you wish the giveaway to last for.\nNOTE: INPUT TIME AS SECONDS!"
+    inputPrize:
+      message: "🎉 Okaly Dokaly, So, the giveaway is taking place in {giveawayChannel} and is lasting for **{time}** seconds.\nWhat do you want the giveaway prize to be?"
+    startingGiveaway:
+      message: "🎉 Starting the giveaway."
+
+    giveawayTime:
+      message: "React with: 🎉\nTo be entered to win: **{prize}**"
+      embed:
+        title: "ITS GIVEAWAY TIME"
+        color: "RANDOM"
+        footer: "Time left: {time}" # This HAS TO INCLUDE {time}
+
+    noOneWonGiveaway:
+      message: "Nobody won this giveaway. Since nobody entered it!"
+      embed:
+        title: "🎉 GIVEAWAY 🎉"
+        color: "RANDOM"
+
+    somebodyWon:
+      message: "Congrats to {winner} on winning **{prize}**"
+      embed:
+        title: "🎉 GIVEAWAY 🎉"
+        color: "RANDOM"
+
+#################
+# TICKET SYSTEM #
+#################
+ticketSystem:
+  enabled: true
+  logTicketClose: true
+  saveTranscriptsUponClose: true # transcripts are saved in /assets/logs
+  categories:
+    enabled: false
+    awaitingResponseID: "INSERT ID HERE" # Copy the ID for the category and place it here
+    respondedID: "INSERT ID HERE" # Same for the one above
+  messages:
+    sendInEmbed: true
+    ticketWelcomeMessage:
+      message: "Hey, {user}!\nThankyou for contacting support. A Staff member will be with you shortly. Within the mean time please explain your issue in as much detail as possible."
+      embed:
+        color: "RANDOM"
+    
+########################
+#       COMMANDS       #
+#                      #
+# Settings for         #
+# Commands!            #
+########################
+
+# Moderation Commands
+moderation:
+  announce:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["shout", "a"]
+    log: true
+    messages:
+      announce:
+        embed:
+          title: "Announcement"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Announcement"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      announcementSent:
+        message: "✅ {tagauthor} Announcement sent successfully!"
+        embed:
+          title: "Announcement Sent!"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+  
+  purge:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["clear"]
+    maxAmount: 100 # The max amount of messages that can be removed in one go.
+    log: true
+    messages:
+      log:
+        title: "Action | Purge"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  lockChannel:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+    log: true
+    messages:
+      lockedMessage:
+        message: "This channel has been locked!"
+        embed:
+          title: "Locked!"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Channel Locked"
+          color: "RANDOM"
+
+  unlockChannel:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+    log: true
+    messages:
+      unlockedMessage:
+        message: "This channel has now been unlocked"
+        embed:
+          title: "Channel unlocked"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Channel Locked"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  poll:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["question"]
+    log: true
+    messages:
+      poll:
+        embed:
+          title: "Poll"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      pollSent:
+        message: "✅ Poll has been sent!"
+        embed:
+          title: "Poll Created"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Poll Created"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  blacklist:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["block"]
+    log: true
+    messages:
+      userBlacklisted:
+        message: "{member} has been blacklisted by {staffmember} because: {reason}"
+        embed:
+          title: "User blacklisted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Player Blacklisted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  unblacklist:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["unblock"]
+    log: true
+    messages:
+      userUnblacklisted:
+        message: "{tagmember} has been Unblacklisted by {tagauthor}."
+        embed:
+          title: "Unblacklisted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Player UnBlacklisted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  say:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+    log: true
+    messages:
+      embed:
+        title: "Message"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Message Said"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  ban:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+    log: true
+    messages:
+      userIsThemself:
+        message: "You cannot ban yourself"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      userBanned:
+        message: "{user} ({userID}) Has been banned by {staffMember} for the reason of {reason}"
+        embed:
+          title: "Banned"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | User unbanned"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+    
+  unban:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+    log: true
+    messages:
+      userIsThemself:
+        message: "You cannot unban yourself. You aint banned..."
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      noUserSpecified:
+        message: "Please specify a user ID: USAGE: -unban <userid>\nTo get the user ID, right click on the user and select COPY ID." # The embed options are done with the message: "personNotFound"
+      log:
+        embed:
+          title: "Action | User unbanned"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      unbanned:
+        message: "{staffmember} has unbanned {user}"
+        embed:
+          title: "Unbanned"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  mute:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["shutup"]
+    log: true
+    addWarningOnMute: true
+    messages:
+      muted:
+        message: "{user} has been muted by {staffmember} for {reason}"
+        embed:
+          title: "User Muted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+      log:
+        embed:
+          title: "Action | User Muted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  unMute:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["speakagain"]
+    log: true
+    messages:
+      unMuted:
+        message: "{user} has been unmuted by {staffmember}"
+        embed:
+          title: "Unmute"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+      log:
+        embed:
+          title: "Action | User Unmuted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  createChannel:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["cchannel"]
+    log: true
+    messages:
+      noOption:
+        message: "You did not choose an option.\n\n**Text** or **Voice**"
+        embed:
+          title: "No option provided"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      noName:
+        message: "You did not provide a name for the channel"
+        embed:
+          title: "No name given"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Channel Created"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      channelCreated:
+        message: "The channel has been created"
+        embed:
+          title: "Channel created!"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  deleteChannel:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["dchannel"]
+    log: true
+    messages:
+      log:
+        embed:
+          title: "Action | Channel Deleted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  createRole:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: [crole]
+    log: true
+    messages:
+      roleCreated:
+        message: "The role **{role}** has been created!\n\nYou can now set up the permissions yourself."
+        embed:
+          title: "Role Created"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Channel Deleted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  deleteRole:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["drole"]
+    log: true
+    messages:
+      roleDeleted:
+        message: "The role **{role}** has been deleted"
+        embed:
+          title: "Role Deleted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      log:
+        embed:
+          title: "Action | Channel Deleted"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  transcripts:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["script"]
+    log: true
+    messages:
+      log:
+        embed:
+          title: "Transcript Created"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  pm:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: ["dm"]
+
+  filter:
+    enabled: true
+    permissionRole: "Staff"
+    aliases: []
+
+  warn:
+    permissionRole: "Staff"
+    # No aliases for this command yet. Coming soon.
+
+  channelTopic:
+    enabled: true
+    permissionRole: "Staff"
+
+# Misc Commands
+misc:
+  define:
+    enabled: true
+    aliases: ["lookup"]
+    messages:
+      embed:
+        footer: "SourceBot by 0pie"
+
+  avatar:
+    enabled: true
+    aliases: ["userimg"]
+
+  memberCount:
+    enabled: true
+    aliases: ["howmanyusers"]
+
+  screenshare:
+    enabled: true
+    aliases: ["ss"]
+    messages:
+      embed:
+        title: "Screensharing Enabled"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  randomNumberGen:
+    enabled: true
+    aliases: ["randomnum"]
+
+# Economy Commands
+economy:
+  coins:
+    daily:
+      enabled: true # It is your responsibility to keep the bot online. If the bot goes online, Timer resets and everyone can reclaim the daily gift.
+      aliases: []
+      amountEveryDay: "50"
+      messages:
+        alreadyClaimed:
+          message: "You have already claimed your 24 hour gift. Come back later..."
+          embed:
+            title: "Daily"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+        claimed:
+          message: "You have just claimed your daily gift! **{amount}** Has been added to your account."
+          embed:
+            title: "Daily"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+
+    leaderboard:
+      size: 20 # must be a number
+      aliases: ["clb"]
+      embed:
+        title: "{discordName} - Top {size}"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+    
+    setCoins:
+      enabled: true
+      permissionRole: "Staff"
+      aliases: []
+      log: true
+      messages:
+        coinsUpdated:
+          message: "{author} You set {username} coins to {newcoins}"
+          embed:
+            title: "Coins updated"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+
+    giveCoins:
+      enabled: true
+      permissionRole: "Staff"
+      aliases: []
+      log: true
+      messages:
+        coinsUpdated:
+          message: "{author} You set {username} coins to {newcoins}"
+          embed:
+            title: "Coins Updated"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+
+    pay:
+      enabled: true
+      log: false
+      aliases: []
+      minimumAmount: 10 # The minimum amount of coins that someone needs to pay in order to pay someone.
+      messages:
+        notEnoughCoins:
+          message: "Whoops! It looks like you dont have enough coins! You only have {userCoins} coins!"
+          embed:
+            title: "Error!"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+        payedCoins:
+          message: "You sent {coins} to {user}"
+          embed:
+            title: "User paid"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+    
+    coins:
+      aliases: ["bal", "balance"]
+      messages:
+        userCoins:
+          message: "You have: **{coins}** coins"
+          embed:
+            title: "{users} coins"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+        user0Coins:
+          message: "{user} has 0 coins"
+          embed:
+            title: "{users} coins"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+        anotherUserCoins:
+          message: "{user} has {coins} coins"
+          embed:
+            title: "{users} coins"
+            color: "RANDOM"
+            footer: "SourceBot by 0pie"
+
+  xp:
+    leaderboard:
+      aliases: ["xplb"]
+      embed:
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+    level:
+      aliases: ["xp"]
+# Game Commands
+game:
+  slots:
+    aliases: ["gamble"]
+    enabled: true
+    minimumAmountOfCoins: 10 # The minimum amount of coins required to gamble.
+    messages:
+      slotted:
+        embed:
+          color: "RANDOM"
+      invalidNumber:
+        message: "That is not a valid number! Please only use whole numbers (Integers)"
+      underMinimumAmount:
+        message: "You must gamble at least **{minimumcoins}** coins"
+      noCoins:
+        message: "You did not provide an amount of coins to gamble"
+      notEnoughCoins:
+        message: "You do not have enough coins to game the desired amount"
+  
+  coinflip:
+    enabled: true
+    minimumAmountOfCoins: 10
+    aliases: ["cf"]
+    messages:
+      invalidOption:
+        message: "You have to choose either **heads** or **tails**"
+        embed:
+          title: "Invalid Option"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      invalidNumber:
+        message: "That is not a valid number! Please only use whole numbers (Integers)"
+        embed:
+          title: "Invalid Amount"
+          coins: "RANDOM"
+          footer: "SourceBot by 0pie"
+      underMinimumAmount:
+        message: "You must gamble at least **{minimumcoins}** coins"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      noCoins:
+        message: "You did not provide an amount of coins to gamble"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      notEnoughCoins:
+        message: "You do not have enough coins to game the desired amount"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      coinFlipped:
+        embed:
+          color: "RANDOM"
+
+  scrambleWord:
+    enabled: true
+    aliases: ["scrambleword", "jumbleword"]
+    secondsToUnscramble: 10
+    messages:
+      jumbledWord:
+        message: "Here is your jumbled word **{word}**. You have 10 seconds to unscramble and you can win {coins} coins!"
+        embed:
+          title: "Jumbled"
+          color: "#RANDOM"
+          footer: "SourceBot by 0pie"
+      notDoneInTime:
+        message: "You did not unscramble the word in time. The word was **{word}**"
+        embed:
+          title: "Jumbled"
+          color: "#RANDOM"
+          footer: "SourceBot by 0pie"
+      Correct:
+        message: "Well done {user} You got the word! And you got **{coins}** coins!"
+        embed:
+          title: "Jumbled"
+          color: "#RANDOM"
+          footer: "SourceBot by 0pie"
+
+
+# Fun Commands
+fun:
+  donaldTrump:
+    enabled: true
+    aliases: ["quotetrump"]
+    embed:
+      color: "RANDOM"
+
+  fidgetSpinner:
+    enabled: true
+    aliases: ["spin"]
+    messages:
+      embed:
+        color: "RANDOM"
+
+  leet:
+    enabled: true
+    aliases: []
+    messages:
+      cooldownActive:
+        message: "{tagauthor} Please wait 1 minuet before converting to l33t again."
+      noMessage:
+        message: "You did not provide a message to convert"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      converted:
+        message:
+          embed:
+            color: "RANDOM"
+
+  wouldYouRather:
+    enabled: true
+    aliases: ["rather"]
+    messages:
+      embed:
+        title: "Rather"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  eightBall:
+    enabled: true
+    aliases: []
+    messages:
+      noQuestion:
+        message: "You did not provide me a question. So I cannot give a response"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  howGay:
+    enabled: true
+    aliases: []
+
+  vodka:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  slav:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  comics:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  dankMemes:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  memes:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  showerThoughts:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  tinderMemes:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  wellThatSucks:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+  wholesomeMemes:
+    enabled: true
+    aliases: []
+    embed:
+      color: "RANDOM"
+
+# General Commands
+general:
+  suggestions:
+    # NOTE: To accept suggestions use this \:large_blue_circle:
+    # NOTE: To deny suggestions use this \:large_red_circle:
+    enabled: true
+    aliases: ["sugg"]
+    cooldown:
+      enabled: true
+      timer: 1 # minutes
+    emojis:
+      upvote: "✅"
+      downvote: "❎"
+    messages:
+      cooldownActive:
+        message: "Whoops! Sorry {tagauthor} Please wait another {cooldown} minutes before adding another suggestion!"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      noSuggestionProvided:
+        message: "Whoops! {tagauthor} Looks like you didnt add a suggestion!"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      suggestionAdded:
+        message: "✅ {tagauthor} Your suggestion has been added!"
+        embed:
+          title: "SourceBot Suggestions"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      inSuggestionsChannel:
+        embed:
+          title: "Suggestion from: {tagauthor}"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  ip:
+    enabled: true
+    aliases: []
+    messages:
+      message: "Our IP is: YOUR IP HERE"
+      embed:
+        title: "IP"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  report:
+    enabled: true
+    aliases: []
+    messages:
+      invalidOption:
+        message: "Please choose an option.\n**Player**,**Bug** or **Other**"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      reported:
+        message: "Thank you for the report! A staff member will take a look shortly."
+        embed:
+          title: "You're Awesome!"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+      inReportsChannel:
+        embed:
+          title: "Source Reports"
+          color: "RANDOM"
+          footer: "SourceBot by 0pie"
+
+  links:
+    enabled: true
+    aliases: []
+    messages:
+      message: "Our links are\n**Forums** - yourwebsite.net\n**Store**: - store.yourwebsite.net" # use \n for a new line.
+      embed:
+        title: "Links:"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  website:
+    enabled: true
+    aliases: []
+    messages:
+      message: "Our website is www.yourwebsite.net"
+      embed:
+        title: "Website:"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  store:
+    enabled: true
+    aliases: []
+    messages:
+      message: "Our Store is **store.yourwebsite.net**"
+      embed:
+        title: "Store:"
+        color: "RANDOM"
+        footer: "SourceBot by 0pie"
+
+  help:
+    # No aliases for this command.
+    # to modify the help menu. Navigate to the YML file located in /assets/Required-Files/Core/help.yml
+    moderation:
+      title: "Moderation"
+      color: "RANDOM"
+
+    games:
+      title: "Games"
+      color: "RANDOM"
+
+    fun:
+      title: "Fun"
+      color: "RANDOM"
+
+    economy:
+      title: "Economy"
+      color: "RANDOM"
+
+    misc:
+      title: "Misc"
+      color: "RANDOM"
+
+    general:
+      title: "General"
+      color: "RANDOM"
+
+  warnings: # The command that checks to see if the user has a record of warnings
+    aliases: []
+
+# Info Commands
+info:
+  ping:
+    enabled: true
+    aliases: ["latency"]
+
+  channelID:
+    enabled: true
+    aliases: []
+
+  roleID:
+    enabled: true
+    aliases: []
+
+  serverID:
+    enabled: true
+    aliases: ["guildid"]
+
+  userID:
+    enabled: true
+    aliases: []
+
+  userInfo:
+    enabled: true
+    aliases: ["userinfo"]
+
+  uptime:
+    enabled: true
+    aliases: []
+
+# Ticket Commands
+ticket:
+  add:
+    enabled: true
+    aliases: []
+  
+  new:
+    enabled: true
+    aliases: ["t", "ticket"]
+    messages:
+      ticketAlreadyOpen:
+        message: "{user} You already have a ticket open. {ticket}"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+
+      ticketCreated:
+        message: "✅ Your ticket has been created {ticket}"
+        embed:
+          title: "New Support Ticket"
+          color: "RANDOM"
+
+  close:
+    aliases: []
+    messages:
+      closeTicketButNotInTicket:
+        message: "Please run this command inside of the ticket"
+        embed:
+          title: "Error"
+          color: "RANDOM"
+      log:
+        embed:
+          title: "Action | Ticket Closed"
+          color: "RANDOM"
+
+  remove:
+    enabled: true
+    aliases: []
+
+##########################
+#       EXTENTIONS       #
+#                        #
+# Feature which you may  #
+# Want. But are disabled #
+# by default             #
+##########################
+
+commandAnalysis:
+  ignoreSpecials: true # This stops the bot saying a command isn't found
+  # when a user does -.- etc.. This doesn't include letters.
+  # Only use when "announceCommandNotFound" is enabled. Which is found at the top of the config
+  characters: [".", "<", ">", ";", ":", "[", "]", "=", "#", "@", "_"]
+
+VoiceChannels:
+  serverStats: # This makes a voice channel show how many users/bots are in the guild.
+    enabled:
+      memberCount: false
+    channels:
+      memberCount: "" # INPUT CHANNEL ID
+
+messageLogger:
+  enabled: true # Logs every message sent to any channel.
+  channelID: "655421752838717460"
